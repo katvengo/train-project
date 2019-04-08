@@ -1,5 +1,16 @@
 .jumbotron{
-background-color: #505168;
-color: #27233A;
+background-color: #8673BA;
+color: #230C33;
 text-align: center;
+}
+
+
+thead, th, td, tr {
+    border: 1px solid black;
+    margin: 15px; 
+    padding: 30px;
+}
+
+#train{
+    font-weight: bold;
 }

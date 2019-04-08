@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,17 @@
             Current Train Schedule
         </div>
         <div class="card-body">
-            Nothing to see here yet
+           <table>
+                <thead>
+                        <tr id="train">
+                          <th scope="col">Train Name</th>
+                          <th scope="col">Destination</th>
+                          <th scope="col">Frequency (minutes)</th>
+                          <th scope="col">Next Arrival</th>
+                          <th scope="col">Minutes Away</th>
+                        </tr>
+                        <tbody id="trainSchedule"></tbody>
+           </table>
         </div>
     </div>
 
@@ -41,28 +52,28 @@
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Train Name</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="name">Train Name</label>
+                    <input class="form-control" id="name-input" id="exampleFormControlInput1">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Destination</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="destination">Destination</label>
+                    <input class="form-control" id="destination-input" id="exampleFormControlInput1">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">First Train time(military style) </label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="trainTime">First Train time (military style H HH: m mm) </label>
+                    <input required class="form-control" id="first-time-input" id="exampleFormControlInput1">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Frequency (minutes)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="freqMinutes">Frequency (minutes)</label>
+                    <input class="form-control" id="frequency-input" id="exampleFormControlInput1">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="submit" id="add-train" class="btn btn-primary">Submit</button>
             </form>
         </div>
+
+<script src="javascript/train.js"></script>
+
 </body>
 
 </html>
